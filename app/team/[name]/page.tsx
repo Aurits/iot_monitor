@@ -66,7 +66,7 @@ const memberInfo: Record<string, TeamMember> = {
             { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
         ],
     },
-    Kevin: {
+    kevin: {
         role: 'IOT Expert and Spring Developer',
         bio: 'I am an aspiring Software Engineer with interest in building life changing solutions',
         github: 'https://github.com/mkb2001',
@@ -77,12 +77,12 @@ const memberInfo: Record<string, TeamMember> = {
             { company: 'NSSF', role: 'Technology and Enterprise Solutions Intern', period: 'Jun-2024-Aug-2024' },
             { company: 'Afrilearn ', role: 'Backend Developer', period: '2022-Present' },
         ],
-        skills: ['Java','Spring','IoT', 'Python', 'Node.js'],
+        skills: ['Java', 'Spring', 'IoT', 'Python', 'Node.js'],
         education: [
             { institution: 'Makerere University', degree: 'B.Sc. in Software Engineering', period: '2021-2026' },
         ],
     },
-    // Other members...
+
 };
 
 export default function TeamMemberPage({ params }: { params: Params }) {
