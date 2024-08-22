@@ -1,5 +1,5 @@
 import { Timeline, TimelineItem } from 'flowbite-react';
-import { FaBriefcase, FaGithub, FaGraduationCap, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaGraduationCap, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 interface TeamMember {
     role: string;
@@ -128,7 +128,7 @@ export default function TeamMemberPage({ params }: { params: Params }) {
                 <h3 className="text-2xl font-bold mb-4">Experience</h3>
                 <Timeline>
                     {member.experience.map((exp, index) => (
-                        <TimelineItem key={index} date={exp.period} icon={<FaBriefcase />}>
+                        <TimelineItem key={index}  >
                             <h4 className="text-xl font-bold">{exp.company}</h4>
                             <p className="text-gray-600">{exp.role}</p>
                         </TimelineItem>
