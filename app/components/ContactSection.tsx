@@ -2,7 +2,7 @@ import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
 export default function ContactSection() {
     return (
-        <section className="bg-gray-50 py-12">
+        <section id="contact" className="bg-gray-50 py-12">
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
                 <p className="text-lg text-gray-600 mb-8">Have questions or want to collaborate? Reach out to us through the following channels.</p>
