@@ -66,20 +66,20 @@ const memberInfo: Record<string, TeamMember> = {
             { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
         ],
     },
-    kevin: {
-        role: 'Lead Developer',
-        bio: 'Expert in IoT systems and architecture.',
-        github: '#',
-        linkedin: '#',
-        twitter: '#',
-        about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
+    Kevin: {
+        role: 'IOT Expert and Spring Developer',
+        bio: 'I am an aspiring Software Engineer with interest in building life changing solutions',
+        github: 'https://github.com/mkb2001',
+        linkedin: 'https://www.linkedin.com/in/kevin-mugarura-b3a621229/',
+        twitter: 'https://x.com/KevinMugarura',
+        about: 'Kevin is a passionate Web and IOT developer. ',
         experience: [
-            { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
-            { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
+            { company: 'NSSF', role: 'Technology and Enterprise Solutions Intern', period: 'Jun-2024-Aug-2024' },
+            { company: 'Afrilearn ', role: 'Backend Developer', period: '2022-Present' },
         ],
-        skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
+        skills: ['Java','Spring','IoT', 'Python', 'Node.js'],
         education: [
-            { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
+            { institution: 'Makerere University', degree: 'B.Sc. in Software Engineering', period: '2021-2026' },
         ],
     },
     // Other members...
