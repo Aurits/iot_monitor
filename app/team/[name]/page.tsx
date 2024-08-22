@@ -21,8 +21,8 @@ const memberInfo: Record<string, TeamMember> = {
     ambrose: {
         role: 'Lead Developer',
         bio: 'Expert in IoT systems and architecture.',
-        github: '#',
-        linkedin: '#',
+        github: 'https://github.com/Aurits',
+        linkedin: 'https://www.linkedin.com/in/ambrose-alanda-b938b0243',
         twitter: '#',
         about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
         experience: [
@@ -93,8 +93,8 @@ export default function TeamMemberPage({ params }: { params: Params }) {
     return (
         <section className="max-w-4xl mx-auto py-12">
             <div className="text-center mb-8">
-                <img src={`/${name.toLowerCase()}.png`} alt={`${name} Avatar`} className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-300 shadow-sm" />
-                <h1 className="text-4xl font-bold">{name}</h1>
+                <img src={`/${name.toLowerCase()}.jpg`} alt={`${name} Avatar`} className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-300 shadow-sm" />
+                <h1 className="text-4xl font-bold">{name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}</h1>
                 <h2 className="text-2xl text-gray-700">{member.role}</h2>
                 <p className="text-lg text-gray-600">{member.bio}</p>
             </div>
