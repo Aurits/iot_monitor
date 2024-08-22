@@ -82,7 +82,7 @@ const memberInfo: Record<string, TeamMember> = {
             { institution: 'Makerere University', degree: 'B.Sc. in Software Engineering', period: '2021-2026' },
         ],
     },
-    // Other members...
+
 };
 
 export default function TeamMemberPage({ params }: { params: Params }) {
