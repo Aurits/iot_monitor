@@ -34,6 +34,54 @@ const memberInfo: Record<string, TeamMember> = {
             { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
         ],
     },
+    jelly: {
+        role: 'Lead Developer',
+        bio: 'Expert in IoT systems and architecture.',
+        github: '#',
+        linkedin: '#',
+        twitter: '#',
+        about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
+        experience: [
+            { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
+            { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
+        ],
+        skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
+        education: [
+            { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
+        ],
+    },
+    cynthia: {
+        role: 'Lead Developer',
+        bio: 'Expert in IoT systems and architecture.',
+        github: '#',
+        linkedin: '#',
+        twitter: '#',
+        about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
+        experience: [
+            { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
+            { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
+        ],
+        skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
+        education: [
+            { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
+        ],
+    },
+    kevin: {
+        role: 'Lead Developer',
+        bio: 'Expert in IoT systems and architecture.',
+        github: '#',
+        linkedin: '#',
+        twitter: '#',
+        about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
+        experience: [
+            { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
+            { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
+        ],
+        skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
+        education: [
+            { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
+        ],
+    },
     // Other members...
 };
 
