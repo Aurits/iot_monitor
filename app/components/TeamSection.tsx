@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const teamMembers = [
     { name: 'Ambrose', role: 'Lead Developer', github: 'https://github.com/Aurits', linkedin: 'https://www.linkedin.com/in/ambrose-alanda-b938b0243', twitter: '#', avatar: '/ambrose.jpg' },
     { name: 'Cynthia', role: 'UX Designer', github: '#', linkedin: '#', twitter: '#', avatar: '/cynthia.jpg' },
-    { name: 'Jelly', role: 'Project Manager', github: '#', linkedin: '#', twitter: '#', avatar: '/jelly.jpg' },
+    { name: 'Jelly', role: 'Project Manager', github: 'https://github.com/Rollingsl', linkedin: '#', twitter: '#', avatar: '/jelly.jpg' },
     { name: 'Kevin', role: 'IoT Specialist', github: '#', linkedin: '#', twitter: '#', avatar: '/kevin.jpg' },
 ];
 

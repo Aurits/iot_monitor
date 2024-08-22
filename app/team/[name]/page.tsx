@@ -35,19 +35,19 @@ const memberInfo: Record<string, TeamMember> = {
         ],
     },
     jelly: {
-        role: 'Lead Developer',
-        bio: 'Expert in IoT systems and architecture.',
-        github: '#',
+        role: 'Project Manager',
+        bio: 'Expert in IoT systems.',
+        github: 'https://github.com/Rollingsl',
         linkedin: '#',
         twitter: '#',
-        about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
+        about: 'I am a passionate software engineer with interests in solving real world problems',
         experience: [
-            { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
-            { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
+            { company: 'MEMD', role: 'IT Intern', period: 'May-2024-July-2024' },
+        
         ],
-        skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
+        skills: ['JavaScript', 'IoT', 'Python', 'PHP', 'Java'],
         education: [
-            { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
+            { institution: 'Makerere University ', degree: 'B.Sc. of Science in software engineering', period: '2022-20226' },
         ],
     },
     cynthia: {
