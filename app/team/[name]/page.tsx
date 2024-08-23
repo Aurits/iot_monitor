@@ -51,19 +51,19 @@ const memberInfo: Record<string, TeamMember> = {
         ],
     },
     cynthia: {
-        role: 'Lead Developer',
-        bio: 'Expert in IoT systems and architecture.',
-        github: '#',
+        role: 'UI Designer',
+        bio: 'Good in front end programming.',
+        github: 'https://github.com/Cynthia2000boop',
         linkedin: '#',
         twitter: '#',
-        about: 'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
+        about: 'I am so passionate about software engineering and solving real world problems with my skills.',
         experience: [
-            { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
-            { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
+            { company: 'UCAA', role: 'It Intern', period: '1 june to 31 July' },
+            
         ],
-        skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
+        skills: ['Data Analysis', 'IoT', 'Python', 'UI design'],
         education: [
-            { institution: 'University of Tech', degree: 'B.Sc. in Computer Science', period: '2010-2014' },
+            { institution: 'Makerere University', degree: 'Bachelor of science in Software engineering', period: '2021_2025' },
         ],
     },
     kevin: {
