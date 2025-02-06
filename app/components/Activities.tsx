@@ -7,11 +7,11 @@ export default function Activities() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {/* Activity 1 */}
                 <article className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow relative">
-                    <h3 className="text-xl font-bold mb-4">IoT Device Integration</h3>
+                    <h3 className="text-xl font-bold mb-4">Supervisor Meeting</h3>
                     <div className="flex items-center text-gray-500 text-sm mb-4">
-                        <FaCalendarAlt className="mr-2" /> July 20, 2024
+                        <FaCalendarAlt className="mr-2" /> August 03, 2024
                     </div>
-                    <p className="text-gray-700 mb-4">Integrated new IoT devices for better air quality monitoring in factory settings...</p>
+                    <p className="text-gray-700 mb-4">The team met with the Supervisor to discuss about the project and confirm.</p>
                     <a href="/activities/iot-integration" className="text-indigo-500 hover:underline flex items-center">
                         Learn more <FaArrowRight className="ml-2" />
                     </a>
