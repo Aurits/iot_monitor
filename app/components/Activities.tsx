@@ -21,7 +21,7 @@ export default function Activities() {
                 <article className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow relative">
                     <h3 className="text-xl font-bold mb-4">Data collection tool</h3>
                     <div className="flex items-center text-gray-500 text-sm mb-4">
-                        <FaCalendarAlt className="mr-2" /> July 30, 2024
+                        <FaCalendarAlt className="mr-2" /> September 15, 2024
                     </div>
                     <p className="text-gray-700 mb-4">We designed data collection tools for different categories i.e Factory workers, health workers, factory managers.
                      These were to guide us in gathering data and requirements.</p>
@@ -32,11 +32,24 @@ export default function Activities() {
 
                 {/* Activity 3 */}
                 <article className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow relative">
-                    <h3 className="text-xl font-bold mb-4">Health & Safety Workshop</h3>
+                    <h3 className="text-xl font-bold mb-4">Data collection and Reporting writing</h3>
                     <div className="flex items-center text-gray-500 text-sm mb-4">
-                        <FaCalendarAlt className="mr-2" /> August 5, 2024
+                        <FaCalendarAlt className="mr-2" /> October 18, 2024
                     </div>
-                    <p className="text-gray-700 mb-4">Conducted a workshop on the importance of air quality monitoring in industrial settings...</p>
+                    <p className="text-gray-700 mb-4">The team went to the field and interviewed different people that included factory workers, factory supervisors,
+                    health workers. All these provided valuable data that we analysed and gave us a clear conclusion. We submitted a report talking about our findings from the field work.</p>
+                    <a href="/activities/health-safety-workshop" className="text-indigo-500 hover:underline flex items-center">
+                        Learn more <FaArrowRight className="ml-2" />
+                    </a>
+                </article>
+
+                {/* Activity 4 */}
+                <article className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow relative">
+                    <h3 className="text-xl font-bold mb-4">Submission of SRS </h3>
+                    <div className="flex items-center text-gray-500 text-sm mb-4">
+                        <FaCalendarAlt className="mr-2" /> December 06, 2024
+                    </div>
+                    <p className="text-gray-700 mb-4">We compiles the requirements that we gathered and submitted a document describing them.</p>
                     <a href="/activities/health-safety-workshop" className="text-indigo-500 hover:underline flex items-center">
                         Learn more <FaArrowRight className="ml-2" />
                     </a>
