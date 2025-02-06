@@ -11,7 +11,7 @@ export default function Activities() {
                     <div className="flex items-center text-gray-500 text-sm mb-4">
                         <FaCalendarAlt className="mr-2" /> August 03, 2024
                     </div>
-                    <p className="text-gray-700 mb-4">The team met with the Supervisor to discuss about the project and confirm.</p>
+                    <p className="text-gray-700 mb-4">The team met with the Supervisor to discuss about the project and confirm if to continue with the project.</p>
                     <a href="/activities/iot-integration" className="text-indigo-500 hover:underline flex items-center">
                         Learn more <FaArrowRight className="ml-2" />
                     </a>
