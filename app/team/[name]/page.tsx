@@ -12,8 +12,16 @@ interface Props {
     }
 }
 
-export default function TeamMemberPage({ params }: Props) {
-    const member = memberInfo[params.name.toLowerCase()]
+const teamImages = {
+    kevin: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kevin.jpg-6Yl3DFF7Kbth9g1iyw5x85TvMZi7dS.jpeg",
+    cynthia: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cynthia.jpg-Tg9LjyQDD5BMIKzgixy3NOZNunUJVE.jpeg",
+    jelly: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jelly.jpg-TsTFzcvFMYeMT2FEVvaiBeTSduUjyP.jpeg",
+    ambrose: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ambrose.jpg-B3CBRR2iEaJecJk55wNuhPN6mqcKTF.jpeg",
+}
+
+export default async function TeamMemberPage({ params }: Props) {
+    const name = params.name.toLowerCase()
+    const member = memberInfo[name]
 
     if (!member) {
         notFound()
@@ -23,12 +31,10 @@ export default function TeamMemberPage({ params }: Props) {
         <div className="container max-w-4xl py-12">
             <div className="text-center mb-8">
                 <Avatar className="w-24 h-24 mx-auto mb-4">
-                    <AvatarImage src={`/${params.name.toLowerCase()}.jpg`} alt={params.name} />
-                    <AvatarFallback>{params.name[0]}</AvatarFallback>
+                    <AvatarImage src={teamImages[name as keyof typeof teamImages]} alt={name} />
+                    <AvatarFallback>{name[0].toUpperCase()}</AvatarFallback>
                 </Avatar>
-                <h1 className="text-4xl font-bold mb-2">
-                    {params.name.charAt(0).toUpperCase() + params.name.slice(1).toLowerCase()}
-                </h1>
+                <h1 className="text-4xl font-bold mb-2">{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
                 <p className="text-2xl text-muted-foreground">{member.role}</p>
             </div>
 
