@@ -1,43 +1,45 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar } from "lucide-react"
 import { motion } from "framer-motion"
+import { Calendar } from "lucide-react"
 
 const posts = [
   {
-    title: "Understanding Factory Air Quality Standards",
-    date: "February 8, 2024",
+    title: "Project Kickoff: IoT-Driven Air Quality Monitoring",
+    date: "August 25, 2024",
     description:
-      "A comprehensive guide to international air quality standards and their importance in factory environments.",
+      "An overview of our innovative approach to factory air quality monitoring using IoT technology. Learn about our project goals and expected impact on worker safety.",
   },
   {
-    title: "IoT Sensors in Industrial Air Monitoring",
-    date: "February 5, 2024",
+    title: "Data Collection Insights: Understanding Factory Environments",
+    date: "September 20, 2024",
     description:
-      "Explore the various types of IoT sensors used in modern air quality monitoring systems and their applications.",
+      "Key findings from our comprehensive data collection phase, including insights from factory workers, health professionals, and management perspectives.",
   },
   {
-    title: "Real-Time Alerts: Protecting Worker Health",
-    date: "February 1, 2024",
+    title: "Technical Deep Dive: IoT Sensor Network Architecture",
+    date: "October 25, 2024",
     description:
-      "How immediate notifications and automated alerts are revolutionizing workplace safety in industrial settings.",
+      "Exploring the technical architecture of our IoT sensor network, including sensor types, data transmission protocols, and real-time monitoring capabilities.",
   },
   {
-    title: "Data Analytics in Air Quality Management",
-    date: "January 28, 2024",
+    title: "Requirements Analysis: Building the Right Solution",
+    date: "December 10, 2024",
     description:
-      "Leveraging big data and analytics to improve air quality management and decision-making in factories.",
+      "A detailed look at the project requirements and how they shape our approach to creating an effective air quality monitoring system.",
   },
   {
-    title: "Regulatory Compliance Made Easy",
-    date: "January 25, 2024",
-    description: "Streamline your regulatory compliance with automated monitoring and reporting systems.",
+    title: "System Design: From Concept to Blueprint",
+    date: "February 25, 2025",
+    description:
+      "Unveiling our system design approach, including cloud architecture, database structure, and user interface considerations.",
   },
   {
-    title: "The Future of Industrial Air Monitoring",
-    date: "January 22, 2024",
-    description: "Exploring upcoming trends and technologies in industrial air quality monitoring and management.",
+    title: "Implementation Progress: Bringing Ideas to Life",
+    date: "April 20, 2025",
+    description:
+      "Updates on our development progress, featuring the working prototype and initial testing results in real factory environments.",
   },
 ]
 
@@ -51,10 +53,10 @@ export function Blog() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Latest Insights</h2>
+          <h2 className="text-3xl font-bold mb-4">Project Updates</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Stay updated with the latest developments in industrial air quality monitoring, IoT technology, and
-            workplace safety.
+            Follow our journey as we develop and implement innovative solutions for industrial air quality monitoring
+            and worker safety.
           </p>
         </motion.div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

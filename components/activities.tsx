@@ -6,38 +6,51 @@ import { Calendar } from "lucide-react"
 
 const activities = [
     {
-        title: "Project Initiation & Requirements Gathering",
-        date: "January 15, 2024",
+        title: "Project Initiation & Supervisor Meeting",
+        date: "August 23, 2024",
+        description: "Met with our supervisor to discuss and confirm the chosen project direction and scope.",
+    },
+    {
+        title: "Data Collection Tool Design",
+        date: "September 4 - 15, 2024",
         description:
-            "Initial meetings with stakeholders to understand factory air quality monitoring needs and define project scope.",
+            "Designed comprehensive data collection tools for different stakeholders including factory workers, health workers, and factory managers.",
     },
     {
-        title: "System Architecture Design",
-        date: "January 30, 2024",
+        title: "Field Data Collection",
+        date: "October 18, 2024",
         description:
-            "Development of comprehensive system architecture including IoT network, cloud platform, and database design.",
+            "Completed the data collection phase through interviews and surveys with various stakeholders in the factory environment.",
     },
     {
-        title: "Sensor Network Implementation",
-        date: "February 15, 2024",
+        title: "Software Requirements Specification (SRS)",
+        date: "December 6, 2024",
         description:
-            "Installation and testing of IoT sensors for monitoring various air quality parameters in factory environments.",
+            "Submitted the comprehensive Software Requirements Specification document outlining project requirements and specifications.",
     },
     {
-        title: "Dashboard Development",
-        date: "March 1, 2024",
-        description: "Creation of user-friendly web dashboard for real-time monitoring and analytics visualization.",
-    },
-    {
-        title: "Testing & Quality Assurance",
-        date: "March 15, 2024",
+        title: "Design Document Submission",
+        date: "February 21, 2025",
         description:
-            "Comprehensive testing of all system components including sensors, alerts, and reporting functionality.",
+            "Completion and submission of the detailed system design document including architecture, interfaces, and technical specifications.",
     },
     {
-        title: "Deployment Planning",
-        date: "March 30, 2024",
-        description: "Preparation for system deployment including documentation and training materials.",
+        title: "Project Implementation",
+        date: "April 18, 2025",
+        description:
+            "Delivery of working prototype demonstrating core functionalities of the air quality monitoring system.",
+    },
+    {
+        title: "Project Report Submission",
+        date: "May 9, 2025",
+        description:
+            "Submission of final project report documenting the entire development process, findings, and recommendations.",
+    },
+    {
+        title: "Final Presentations",
+        date: "May 12 - 16, 2025",
+        description:
+            "Project demonstrations and presentations to stakeholders, showcasing the completed system and its benefits.",
     },
 ]
 
@@ -53,7 +66,8 @@ export function Activities() {
                 >
                     <h2 className="text-3xl font-bold mb-4">Project Timeline</h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Track our progress as we develop and implement the IoT-driven air quality monitoring system.
+                        Track our progress as we develop and implement the IoT-driven air quality monitoring system from initial
+                        concept to final deployment.
                     </p>
                 </motion.div>
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
