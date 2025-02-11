@@ -124,7 +124,7 @@ const activities = [
 export function Activities() {
     return (
         <section id="activities" className="py-12 bg-gradient-to-b from-muted/50 to-background">
-            <div className="container">
+            <div className="container px-4 sm:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -148,15 +148,15 @@ export function Activities() {
                         >
                             <Card
                                 className={`relative overflow-hidden ${activity.status === "Completed"
-                                    ? "border-l-4 border-l-green-500"
-                                    : activity.status === "In Progress"
-                                        ? "border-l-4 border-l-blue-500"
-                                        : "border-l-4 border-l-gray-300"
+                                        ? "border-l-4 border-l-green-500"
+                                        : activity.status === "In Progress"
+                                            ? "border-l-4 border-l-blue-500"
+                                            : "border-l-4 border-l-gray-300"
                                     }`}
                             >
-                                <CardHeader>
-                                    <div className="flex items-center justify-between mb-2">
-                                        <div className="flex items-center space-x-2">
+                                <CardHeader className="space-y-4 md:space-y-2">
+                                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                                        <div className="flex flex-wrap items-center gap-2">
                                             <Badge
                                                 variant={
                                                     activity.status === "Completed"
@@ -182,7 +182,7 @@ export function Activities() {
                                     <CardDescription>{activity.description}</CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="grid gap-2">
+                                    <div className="grid gap-2 sm:grid-cols-2">
                                         {activity.tasks.map((task, taskIndex) => (
                                             <motion.div
                                                 key={taskIndex}
@@ -192,9 +192,9 @@ export function Activities() {
                                                 transition={{ delay: taskIndex * 0.1 }}
                                             >
                                                 {task.completed ? (
-                                                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                                                    <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-500" />
                                                 ) : (
-                                                    <Circle className="h-4 w-4 text-muted-foreground" />
+                                                    <Circle className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
                                                 )}
                                                 <span className={`${task.completed ? "text-green-500" : "text-muted-foreground"}`}>
                                                     {task.title}
