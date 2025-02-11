@@ -1,11 +1,9 @@
-
-import Activities from "./components/Activities";
-import Blog from "./components/Blog";
-import ContactSection from "./components/ContactSection";
-import Intro from "./components/Intro";
-import Showcase from "./components/Showcase";
-import TeamSection from "./components/TeamSection";
-
+import { Showcase } from "@/components/showcase"
+import { Intro } from "@/components/intro"
+import { Blog } from "@/components/blog"
+import { Activities } from "@/components/activities"
+import { Team } from "@/components/team"
+import { Contact } from "@/components/contact"
 
 export default function Home() {
   return (
@@ -14,8 +12,9 @@ export default function Home() {
       <Intro />
       <Blog />
       <Activities />
-      <TeamSection />
-      <ContactSection />
+      <Team />
+      <Contact />
     </div>
-  );
+  )
 }
+
