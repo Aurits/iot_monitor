@@ -4,12 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { memberInfo } from "@/lib/team-data"
 import { Github, Linkedin, Twitter } from "lucide-react"
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-interface Props {
+type Props = {
     params: {
         name: string
     }
+    searchParams: { [key: string]: string | string[] | undefined }
 }
 
 const teamImages = {
@@ -17,11 +19,28 @@ const teamImages = {
     cynthia: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cynthia.jpg-Tg9LjyQDD5BMIKzgixy3NOZNunUJVE.jpeg",
     jelly: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jelly.jpg-TsTFzcvFMYeMT2FEVvaiBeTSduUjyP.jpeg",
     ambrose: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ambrose.jpg-B3CBRR2iEaJecJk55wNuhPN6mqcKTF.jpeg",
+} as const
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const name = params.name.toLowerCase()
+    const member = memberInfo[name as keyof typeof memberInfo]
+
+    if (!member) {
+        return {
+            title: "Member Not Found",
+            description: "The team member you are looking for does not exist.",
+        }
+    }
+
+    return {
+        title: `${name.charAt(0).toUpperCase() + name.slice(1)} - Factory Monitor Team`,
+        description: member.bio,
+    }
 }
 
 export default async function TeamMemberPage({ params }: Props) {
     const name = params.name.toLowerCase()
-    const member = memberInfo[name]
+    const member = memberInfo[name as keyof typeof memberInfo]
 
     if (!member) {
         notFound()
@@ -52,6 +71,7 @@ export default async function TeamMemberPage({ params }: Props) {
                             className="text-muted-foreground hover:text-primary transition-colors"
                         >
                             <Github className="h-6 w-6" />
+                            <span className="sr-only">GitHub Profile</span>
                         </a>
                         <a
                             href={member.linkedin}
@@ -60,6 +80,7 @@ export default async function TeamMemberPage({ params }: Props) {
                             className="text-muted-foreground hover:text-primary transition-colors"
                         >
                             <Linkedin className="h-6 w-6" />
+                            <span className="sr-only">LinkedIn Profile</span>
                         </a>
                         <a
                             href={member.twitter}
@@ -68,6 +89,7 @@ export default async function TeamMemberPage({ params }: Props) {
                             className="text-muted-foreground hover:text-primary transition-colors"
                         >
                             <Twitter className="h-6 w-6" />
+                            <span className="sr-only">Twitter Profile</span>
                         </a>
                     </div>
                 </CardContent>
