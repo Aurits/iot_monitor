@@ -8,10 +8,8 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 type Props = {
-    params: {
-        name: string
-    }
-    searchParams: { [key: string]: string | string[] | undefined }
+    params: Promise<{ name: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 const teamImages = {
@@ -22,8 +20,9 @@ const teamImages = {
 } as const
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const name = params.name.toLowerCase()
-    const member = memberInfo[name as keyof typeof memberInfo]
+    const { name } = await params
+    const normalizedName = name.toLowerCase()
+    const member = memberInfo[normalizedName as keyof typeof memberInfo]
 
     if (!member) {
         return {
@@ -33,14 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: `${name.charAt(0).toUpperCase() + name.slice(1)} - Factory Monitor Team`,
+        title: `${normalizedName.charAt(0).toUpperCase() + normalizedName.slice(1)} - Factory Monitor Team`,
         description: member.bio,
     }
 }
 
 export default async function TeamMemberPage({ params }: Props) {
-    const name = params.name.toLowerCase()
-    const member = memberInfo[name as keyof typeof memberInfo]
+    const { name } = await params
+    const normalizedName = name.toLowerCase()
+    const member = memberInfo[normalizedName as keyof typeof memberInfo]
 
     if (!member) {
         notFound()
@@ -50,10 +50,10 @@ export default async function TeamMemberPage({ params }: Props) {
         <div className="container max-w-4xl py-12">
             <div className="text-center mb-8">
                 <Avatar className="w-24 h-24 mx-auto mb-4">
-                    <AvatarImage src={teamImages[name as keyof typeof teamImages]} alt={name} />
-                    <AvatarFallback>{name[0].toUpperCase()}</AvatarFallback>
+                    <AvatarImage src={teamImages[normalizedName as keyof typeof teamImages]} alt={normalizedName} />
+                    <AvatarFallback>{normalizedName[0].toUpperCase()}</AvatarFallback>
                 </Avatar>
-                <h1 className="text-4xl font-bold mb-2">{name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+                <h1 className="text-4xl font-bold mb-2">{normalizedName.charAt(0).toUpperCase() + normalizedName.slice(1)}</h1>
                 <p className="text-2xl text-muted-foreground">{member.role}</p>
             </div>
 
