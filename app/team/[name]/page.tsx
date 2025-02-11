@@ -1,227 +1,135 @@
-import { Timeline, TimelineItem } from 'flowbite-react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { memberInfo } from "@/lib/team-data"
+import { Github, Linkedin, Twitter } from "lucide-react"
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
 
-interface TeamMember {
-  role: string;
-  bio: string;
-  github: string;
-  linkedin: string;
-  twitter: string;
-  about: string;
-  experience: { company: string; role: string; period: string }[];
-  skills: string[];
-  education: { institution: string; degree: string; period: string }[];
+type Props = {
+    params: Promise<{ name: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-interface Params {
-  name: string;
+const teamImages = {
+    kevin: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kevin.jpg-6Yl3DFF7Kbth9g1iyw5x85TvMZi7dS.jpeg",
+    cynthia: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cynthia.jpg-Tg9LjyQDD5BMIKzgixy3NOZNunUJVE.jpeg",
+    jelly: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jelly.jpg-TsTFzcvFMYeMT2FEVvaiBeTSduUjyP.jpeg",
+    ambrose: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ambrose.jpg-B3CBRR2iEaJecJk55wNuhPN6mqcKTF.jpeg",
+} as const
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { name } = await params
+    const normalizedName = name.toLowerCase()
+    const member = memberInfo[normalizedName as keyof typeof memberInfo]
+
+    if (!member) {
+        return {
+            title: "Member Not Found",
+            description: "The team member you are looking for does not exist.",
+        }
+    }
+
+    return {
+        title: `${normalizedName.charAt(0).toUpperCase() + normalizedName.slice(1)} - Factory Monitor Team`,
+        description: member.bio,
+    }
 }
 
-const memberInfo: Record<string, TeamMember> = {
-  ambrose: {
-    role: 'Lead Developer',
-    bio: 'Expert in IoT systems and architecture.',
-    github: 'https://github.com/Aurits',
-    linkedin: 'https://www.linkedin.com/in/ambrose-alanda-b938b0243',
-    twitter: '#',
-    about:
-      'Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.',
-    experience: [
-      { company: 'Tech Innovations', role: 'Senior Developer', period: '2018-Present' },
-      { company: 'Smart Systems Inc.', role: 'IoT Specialist', period: '2014-2018' },
-    ],
-    skills: ['JavaScript', 'IoT', 'Python', 'Node.js'],
-    education: [
-      {
-        institution: 'University of Tech',
-        degree: 'B.Sc. in Computer Science',
-        period: '2010-2014',
-      },
-    ],
-  },
-  jelly: {
-    role: 'Project Manager',
-    bio: 'Expert in IoT systems.',
-    github: 'https://github.com/Rollingsl',
-    linkedin: '#',
-    twitter: '#',
-    about:
-      'I am a passionate software engineer with interests in solving real world problems',
-    experience: [
-      { company: 'MEMD', role: 'IT Intern', period: 'May-2024-July-2024' },
-    ],
-    skills: ['JavaScript', 'IoT', 'Python', 'PHP', 'Java'],
-    education: [
-      {
-        institution: 'Makerere University ',
-        degree: 'B.Sc. of Science in Software Engineering',
-        period: '2022-2026',
-      },
-    ],
-  },
-  cynthia: {
-    role: 'UI Designer',
-    bio: 'Expert in Machine Learning and front-end development.',
-    github: 'https://github.com/Cynthia2000boop',
-    linkedin: '#',
-    twitter: '#',
-    about:
-      'I am a software engineer who is passionate about applying my skills to solve real-world problems, with a strong focus on UI design and machine learning.',
-    experience: [
-      {
-        company: 'UCAA',
-        role: 'IT Intern',
-        period: '1 June to 31 July 2024',
-      },
-    ],
-    skills: ['Data Analysis', 'IoT', 'Python', 'UI design', 'Node.js', 'Machine Learning'],
-    education: [
-      {
-        institution: 'Makerere University',
-        degree: 'Bachelor of Science in Software Engineering',
-        period: '2021-2025',
-      },
-    ],
-  },
-  kevin: {
-    role: 'IOT Expert and Spring Developer',
-    bio: 'I am an aspiring Software Engineer with interest in building life changing solutions',
-    github: 'https://github.com/mkb2001',
-    linkedin: 'https://www.linkedin.com/in/kevin-mugarura-b3a621229/',
-    twitter: 'https://x.com/KevinMugarura',
-    about: 'Kevin is a passionate Web and IOT developer. ',
-    experience: [
-      {
-        company: 'NSSF',
-        role: 'Technology and Enterprise Solutions Intern',
-        period: 'Jun-2024-Aug-2024',
-      },
-      {
-        company: 'Afrilearn ',
-        role: 'Backend Developer',
-        period: '2022-Present',
-      },
-    ],
-    skills: ['Java', 'Spring', 'IoT', 'Python', 'Node.js'],
-    education: [
-      {
-        institution: 'Makerere University',
-        degree: 'B.Sc. in Software Engineering',
-        period: '2021-2026',
-      },
-    ],
-  },
-};
+export default async function TeamMemberPage({ params }: Props) {
+    const { name } = await params
+    const normalizedName = name.toLowerCase()
+    const member = memberInfo[normalizedName as keyof typeof memberInfo]
 
-export default function TeamMemberPage({ params }: { params: Params }) {
-  const { name } = params;
+    if (!member) {
+        notFound()
+    }
 
-  const member =
-    memberInfo[name.toLowerCase()] || {
-      role: '',
-      bio: '',
-      github: '',
-      linkedin: '',
-      twitter: '',
-      about: '',
-      experience: [],
-      skills: [],
-      education: [],
-    };
+    return (
+        <div className="container max-w-4xl py-12">
+            <div className="text-center mb-8">
+                <Avatar className="w-24 h-24 mx-auto mb-4">
+                    <AvatarImage src={teamImages[normalizedName as keyof typeof teamImages]} alt={normalizedName} />
+                    <AvatarFallback>{normalizedName[0].toUpperCase()}</AvatarFallback>
+                </Avatar>
+                <h1 className="text-4xl font-bold mb-2">{normalizedName.charAt(0).toUpperCase() + normalizedName.slice(1)}</h1>
+                <p className="text-2xl text-muted-foreground">{member.role}</p>
+            </div>
 
-  return (
-    <section className="max-w-4xl mx-auto py-12">
-      <div className="text-center mb-8">
-        <img
-          src={`/${name.toLowerCase()}.jpg`}
-          alt={`${name} Avatar`}
-          className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-300 shadow-sm"
-        />
-        <h1 className="text-4xl font-bold">
-          {name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}
-        </h1>
-        <h2 className="text-2xl text-gray-700">{member.role}</h2>
-        <p className="text-lg text-gray-600">{member.bio}</p>
-      </div>
+            <Card className="mb-8">
+                <CardHeader>
+                    <CardTitle>About</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-muted-foreground">{member.about}</p>
+                    <div className="flex justify-center space-x-4 mt-4">
+                        <a
+                            href={member.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Github className="h-6 w-6" />
+                            <span className="sr-only">GitHub Profile</span>
+                        </a>
+                        <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Linkedin className="h-6 w-6" />
+                            <span className="sr-only">LinkedIn Profile</span>
+                        </a>
+                        <a
+                            href={member.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Twitter className="h-6 w-6" />
+                            <span className="sr-only">Twitter Profile</span>
+                        </a>
+                    </div>
+                </CardContent>
+            </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* About Section */}
-        <div>
-          <h3 className="text-2xl font-bold mb-4">About</h3>
-          <p className="text-gray-700 leading-relaxed">{member.about}</p>
+            <div className="grid gap-8 md:grid-cols-2">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Experience</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="space-y-4">
+                            {member.experience.map((exp, index) => (
+                                <div key={index}>
+                                    <h4 className="font-semibold">{exp.company}</h4>
+                                    <p className="text-sm text-muted-foreground">{exp.role}</p>
+                                    <p className="text-sm text-muted-foreground">{exp.period}</p>
+                                    {index < member.experience.length - 1 && <Separator className="my-2" />}
+                                </div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Skills</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2">
+                            {member.skills.map((skill, index) => (
+                                <Badge key={index} variant="secondary">
+                                    {skill}
+                                </Badge>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
         </div>
-
-        {/* Social Links */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">Connect with {name}</h3>
-          <div className="flex justify-center space-x-8">
-            <a
-              href={member.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-800"
-            >
-              <FaGithub size={32} />
-            </a>
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-800"
-            >
-              <FaLinkedin size={32} />
-            </a>
-            <a
-              href={member.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-800"
-            >
-              <FaTwitter size={32} />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Experience Section */}
-      <div className="mt-12">
-        <h3 className="text-2xl font-bold mb-4">Experience</h3>
-        <Timeline>
-          {member.experience.map((exp, index) => (
-            <TimelineItem key={index}>
-              <h4 className="text-xl font-bold">{exp.company}</h4>
-              <p className="text-gray-600">{exp.role}</p>
-              <p className="text-gray-500">{exp.period}</p>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </div>
-
-      {/* Skills Section */}
-      <div className="mt-12">
-        <h3 className="text-2xl font-bold mb-4">Skills</h3>
-        <div className="flex flex-wrap gap-2">
-          {member.skills.map((skill, index) => (
-            <span key={index} className="bg-indigo-500 text-white px-3 py-1 rounded-full">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Education Section */}
-      <div className="mt-12">
-        <h3 className="text-2xl font-bold mb-4">Education</h3>
-        <Timeline>
-          {member.education.map((edu, index) => (
-            <TimelineItem key={index}>
-              <h4 className="text-xl font-bold">{edu.institution}</h4>
-              <p className="text-gray-600">{edu.degree}</p>
-              <p className="text-gray-500">{edu.period}</p>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </div>
-    </section>
-  );
+    )
 }
+
