@@ -1,11 +1,12 @@
 "use client"
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Github, Linkedin, Twitter } from "lucide-react"
-import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { memberInfo } from "@/lib/team-data"
+import { motion } from "framer-motion"
+import { BookOpen, Github, GraduationCap, Linkedin, Mail, Twitter } from 'lucide-react'
 import Link from "next/link"
 
 const teamImages = {
@@ -30,6 +31,62 @@ export function Team() {
             Meet the talented individuals behind our IoT-driven air quality monitoring solution.
           </p>
         </motion.div>
+
+        {/* Supervisor Card - Featured at the top */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <Card className="overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-background to-primary/5">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="md:col-span-1 flex flex-col items-center justify-center p-6 bg-primary/5">
+                <div className="relative mb-4">
+                  <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/30 to-primary/60 blur-sm"></div>
+                  <Avatar className="w-32 h-32 border-4 border-background">
+                    <AvatarImage src="/placeholder.svg?height=128&width=128" alt="Dr. Nasser Kimbugwe" />
+                    <AvatarFallback className="text-2xl">NK</AvatarFallback>
+                  </Avatar>
+                </div>
+                <Badge variant="outline" className="mb-2 bg-primary/10 text-primary">Project Supervisor</Badge>
+                <h3 className="text-2xl font-bold mb-1">Dr. Nasser Kimbugwe</h3>
+                <p className="text-sm text-muted-foreground text-center">PhD</p>
+              </div>
+
+              <div className="md:col-span-2 p-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <GraduationCap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-medium">Department of Networks</h4>
+                      <p className="text-sm text-muted-foreground">School of Computing and Informatics Technology, Makerere University</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <BookOpen className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-medium">Research Interests</h4>
+                      <p className="text-sm text-muted-foreground">AI (Machine learning and Deep learning), software engineering, internet of things, programming languages, data science</p>
+                    </div>
+                  </div>
+                  <div className="flex justify-start gap-3 mt-6">
+                    <Button variant="outline" size="sm" className="rounded-full" asChild>
+                      <a href="mailto:kimbugwe@gmail.com">
+                        <Mail className="h-4 w-4 mr-2" />
+                        Contact
+                      </a>
+                    </Button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
+
+        {/* Team Members Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {Object.entries(memberInfo).map(([key, member], index) => (
             <motion.div
@@ -44,7 +101,7 @@ export function Team() {
                   <div className="relative w-32 h-32 mx-auto mb-4">
                     <Avatar className="w-full h-full">
                       <AvatarImage
-                        src={teamImages[key as keyof typeof teamImages]}
+                        src={teamImages[key as keyof typeof teamImages] || "/placeholder.svg"}
                         alt={`${key} profile`}
                         className="object-cover"
                       />
@@ -103,4 +160,3 @@ export function Team() {
     </section>
   )
 }
-

@@ -1,8 +1,8 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone } from "lucide-react"
 import { motion } from "framer-motion"
+import { Mail, Phone } from "lucide-react"
 
 export function Contact() {
   return (
@@ -30,10 +30,10 @@ export function Contact() {
               </CardHeader>
               <CardContent>
                 <a
-                  href="mailto:info@iotmonitor.com"
+                  href="mailto:alandaambrose@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@iotmonitor.com
+                  info@factoryairwatch.com
                 </a>
               </CardContent>
             </Card>
