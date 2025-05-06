@@ -41,6 +41,13 @@ const posts = [
     description:
       "Updates on our development progress, featuring the working prototype and initial testing results in real factory environments.",
   },
+  ,
+  {
+    title: "Project Presentation: Showcasing Our Solution",
+    date: "May 12, 2025",
+    description:
+      "Join us for our project presentation, where we will showcase our IoT-driven air quality monitoring solution and its impact on worker safety. We will share insights from our journey and future plans.",
+  },
 ]
 
 export function Blog() {
@@ -62,7 +69,7 @@ export function Blog() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <motion.div
-              key={post.title}
+              key={post?.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -70,14 +77,14 @@ export function Blog() {
             >
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <CardTitle className="text-xl">{post.title}</CardTitle>
+                  <CardTitle className="text-xl">{post?.title}</CardTitle>
                   <div className="flex items-center text-muted-foreground text-sm">
                     <Calendar className="h-4 w-4 mr-2" />
-                    {post.date}
+                    {post?.date}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{post.description}</p>
+                  <p className="text-muted-foreground">{post?.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
