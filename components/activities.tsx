@@ -66,54 +66,54 @@ const activities = [
     {
         title: "Design Document Submission",
         date: "February 21, 2025",
-        status: "In Progress",
-        progress: 60,
+        status: "Completed",
+        progress: 100,
         description: "Comprehensive system design documentation.",
         tasks: [
             { title: "System architecture design", completed: true },
             { title: "Database schema design", completed: true },
             { title: "UI/UX wireframes", completed: true },
-            { title: "API documentation", completed: false },
-            { title: "Security architecture planning", completed: false },
+            { title: "API documentation", completed: true },
+            { title: "Security architecture planning", completed: true },
         ],
     },
     {
         title: "Project Implementation",
         date: "April 18, 2025",
-        status: "Upcoming",
-        progress: 0,
+        status: "Completed",
+        progress: 100,
         description: "Development and testing of the working prototype.",
         tasks: [
-            { title: "IoT sensor network setup", completed: false },
-            { title: "Backend development", completed: false },
-            { title: "Frontend implementation", completed: false },
-            { title: "Database integration", completed: false },
-            { title: "System testing and debugging", completed: false },
+            { title: "IoT sensor network setup", completed: true },
+            { title: "Backend development", completed: true },
+            { title: "Frontend implementation", completed: true },
+            { title: "Database integration", completed: true },
+            { title: "System testing and debugging", completed: true },
         ],
     },
     {
         title: "Project Report Submission",
         date: "May 9, 2025",
-        status: "Upcoming",
-        progress: 0,
+        status: "Completed",
+        progress: 100,
         description: "Final documentation of the entire project.",
         tasks: [
-            { title: "Implementation documentation", completed: false },
-            { title: "Testing results compilation", completed: false },
-            { title: "User manual creation", completed: false },
-            { title: "Future recommendations", completed: false },
-            { title: "Final report compilation", completed: false },
+            { title: "Implementation documentation", completed: true },
+            { title: "Testing results compilation", completed: true },
+            { title: "User manual creation", completed: true },
+            { title: "Future recommendations", completed: true },
+            { title: "Final report compilation", completed: true },
         ],
     },
     {
         title: "Final Presentations",
         date: "May 12 - 16, 2025",
-        status: "Upcoming",
-        progress: 0,
+        status: "In Progress",
+        progress: 40,
         description: "Project demonstration and presentation to stakeholders.",
         tasks: [
-            { title: "Presentation preparation", completed: false },
-            { title: "Demo environment setup", completed: false },
+            { title: "Presentation preparation", completed: true },
+            { title: "Demo environment setup", completed: true },
             { title: "Stakeholder presentation", completed: false },
             { title: "Technical demonstration", completed: false },
             { title: "Feedback collection", completed: false },
@@ -148,10 +148,10 @@ export function Activities() {
                         >
                             <Card
                                 className={`relative overflow-hidden ${activity.status === "Completed"
-                                        ? "border-l-4 border-l-green-500"
-                                        : activity.status === "In Progress"
-                                            ? "border-l-4 border-l-blue-500"
-                                            : "border-l-4 border-l-gray-300"
+                                    ? "border-l-4 border-l-green-500"
+                                    : activity.status === "In Progress"
+                                        ? "border-l-4 border-l-blue-500"
+                                        : "border-l-4 border-l-gray-300"
                                     }`}
                             >
                                 <CardHeader className="space-y-4 md:space-y-2">

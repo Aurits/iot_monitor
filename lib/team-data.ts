@@ -20,25 +20,59 @@ export interface TeamMember {
   
   export const memberInfo: Record<string, TeamMember> = {
     ambrose: {
-      role: "Lead Developer",
-      bio: "Expert in IoT systems and architecture.",
+      role: "Lead Developer & DevOps Engineer",
+      bio: "Full‑stack/IoT engineer with a strong DevOps focus—cut deployment times by 30 % and drove the end‑to‑end build pipeline for FactoryAirWatch.",
       github: "https://github.com/Aurits",
       linkedin: "https://www.linkedin.com/in/ambrose-alanda-b938b0243",
       twitter: "#",
-      about: "Ambrose is a passionate developer with over 10 years of experience in building IoT solutions.",
+      about:
+        "Ambrose is a versatile software engineer (Python • TypeScript • IoT) who led firmware integration and built the GitHub‑to‑Vercel CI/CD workflow that keeps FactoryAirWatch shipping safely. He enjoys mentoring peers and applying AI/DevOps practices to real‑world problems.",
       experience: [
-        { company: "Tech Innovations", role: "Senior Developer", period: "2018-Present" },
-        { company: "Smart Systems Inc.", role: "IoT Specialist", period: "2014-2018" },
-      ],
-      skills: ["JavaScript", "IoT", "Python", "Node.js", "React", "Next.js", "MongoDB"],
-      education: [
         {
-          institution: "University of Tech",
-          degree: "B.Sc. in Computer Science",
-          period: "2010-2014",
+          company: "AIBOS UG",
+          role: "Software & DevOps Engineer",
+          period: "2024 – Present",
+        },
+        {
+          company: "Native Innovations",
+          role: "ERP / Dashboard Developer",
+          period: "2024",
+        },
+        {
+          company: "Microsoft (Student Ambassador)",
+          role: "Community Trainer – Azure & GitHub Actions",
+          period: "2023 – 2025",
+        },
+        {
+          company: "DICTS – Makerere University",
+          role: "IT Intern (DevOps & Web)",
+          period: "2023 – 2024",
+        },
+        {
+          company: "Freelance",
+          role: "Full‑Stack / DevOps Consultant",
+          period: "2020 – 2024",
         },
       ],
-    },
+      skills: [
+        "Python", "JavaScript/TypeScript", "Django", "React", "Next.js",
+        "FastAPI", "Docker", "Kubernetes", "CI/CD (GitHub Actions, Vercel)",
+        "IoT connectivity", "AI/NLP", "PostgreSQL/MySQL", "Linux"
+      ],
+      education: [
+        {
+          institution: "Makerere University",
+          degree: "B.Sc. in Software Engineering",
+          period: "2022 – 2026",
+        },
+        {
+          institution: "Postman",
+          degree: "API Fundamentals Certification",
+          period: "2023",
+        }
+      ]
+    }
+,    
     cynthia: {
       role: "UI Designer & ML Engineer",
       bio: "Expert in Machine Learning and front-end development.",

@@ -1,11 +1,11 @@
 "use client"
 
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Activity, Shield, Zap } from "lucide-react"
-import Link from "next/link"
 import { motion } from "framer-motion"
+import { Activity, ArrowRight, Shield, Zap } from "lucide-react"
+import Link from "next/link"
 
 const container = {
   hidden: { opacity: 0 },
@@ -31,7 +31,7 @@ export function Showcase() {
         animate={{ scale: 1 }}
         transition={{ duration: 2 }}
         style={{
-          backgroundImage: 'url("/showcase.jpg")',
+          backgroundImage: 'url("/showcase.jpeg")',
           backgroundBlendMode: "overlay",
           backgroundColor: "rgba(0, 0, 0, 0.7)",
         }}

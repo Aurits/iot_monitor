@@ -1,13 +1,13 @@
 "use client"
 
-import Link from "next/link"
-import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Home, Users, BookOpen, Mail, Moon, Sun, X, Activity, Gauge } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
+import { AnimatePresence, motion } from "framer-motion"
+import { Activity, BookOpen, Gauge, Home, Mail, Menu, Moon, Sun, Users, X } from "lucide-react"
+import { useTheme } from "next-themes"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -69,7 +69,7 @@ export default function NavBar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Factory Monitor
+            Factory Air Watch
           </motion.span>
         </Link>
 
